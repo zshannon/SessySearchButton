@@ -60,6 +60,8 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
         ])
       }
     }
+    self.textField.textColor = self.tintColor
+    self.textField.tintColor = self.tintColor
   }
   
   private var isSetup = false
@@ -83,6 +85,7 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
     self.textField.returnKeyType = .search
     self.textField.textAlignment = .center
     self.textField.textColor = self.tintColor
+    self.textField.tintColor = self.tintColor
     self.textField.translatesAutoresizingMaskIntoConstraints = false
     self.addSubview(textField)
     NSLayoutConstraint.activate([

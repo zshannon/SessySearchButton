@@ -1,0 +1,4 @@
+xcassets:
+  paths: SessySearchButtonExample/Assets.xcassets
+  templateName: swift4
+  output: SessySearchButtonExample/Generated/Assets.swift

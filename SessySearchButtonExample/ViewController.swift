@@ -14,12 +14,11 @@ class ViewController: UIViewController {
   @IBOutlet weak var label: UILabel?
   @IBOutlet weak var searchButton: SessySearchButton?
   
-  let backgroundColor = UIColor(red:0.27, green:0.56, blue:0.96, alpha:1.0)
-  let highlightColor = UIColor(red:1.00, green:0.91, blue:0.51, alpha:1.0)
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = backgroundColor
+    self.view.backgroundColor = Asset.dodgerBlue.color
+    self.searchButton?.backgroundColor = Asset.darkMalibu.color
+    self.searchButton?.tintColor = Asset.kournikova.color
     self.label?.text = ""
     
     self.searchButton?.search = { value in
@@ -32,13 +31,13 @@ class ViewController: UIViewController {
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     UIView.animate(withDuration: 0.15) {
-      self.view.backgroundColor = self.highlightColor
+      self.view.backgroundColor = Asset.kournikova.color
     }
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     UIView.animate(withDuration: 0.30) {
-      self.view.backgroundColor = self.backgroundColor
+      self.view.backgroundColor = Asset.dodgerBlue.color
     }
   }
 

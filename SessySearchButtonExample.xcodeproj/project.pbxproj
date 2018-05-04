@@ -12,6 +12,7 @@
 		11F1D267209A3EBA00A13414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F1D265209A3EBA00A13414 /* Main.storyboard */; };
 		11F1D269209A3EBC00A13414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F1D268209A3EBC00A13414 /* Assets.xcassets */; };
 		11F1D26C209A3EBC00A13414 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F1D26A209A3EBC00A13414 /* LaunchScreen.storyboard */; };
+		11F284A5209D0CC000007B89 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F284A4209D0CC000007B89 /* Assets.swift */; };
 		9799FF2E523B3C6A386C49E7 /* Pods_SessySearchButtonExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE906D5C2AC7315E2751789 /* Pods_SessySearchButtonExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,8 @@
 		11F1D268209A3EBC00A13414 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11F1D26B209A3EBC00A13414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11F1D26D209A3EBC00A13414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F284A3209D0CA500007B89 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		11F284A4209D0CC000007B89 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assets.swift; path = Generated/Assets.swift; sourceTree = "<group>"; };
 		1419CAB71116D0554B720D6F /* Pods-SessySearchButtonExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SessySearchButtonExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SessySearchButtonExample/Pods-SessySearchButtonExample.release.xcconfig"; sourceTree = "<group>"; };
 		3A16A956B0DB5FB3E3B29F93 /* Pods_SearchButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB7A6C4655CD097C1D68EF9 /* Pods-SearchButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchButton.release.xcconfig"; path = "Pods/Target Support Files/Pods-SearchButton/Pods-SearchButton.release.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +67,8 @@
 		11F1D260209A3EBA00A13414 /* SessySearchButtonExample */ = {
 			isa = PBXGroup;
 			children = (
+				11F284A4209D0CC000007B89 /* Assets.swift */,
+				11F284A3209D0CA500007B89 /* swiftgen.yml */,
 				11F1D261209A3EBA00A13414 /* AppDelegate.swift */,
 				11F1D263209A3EBA00A13414 /* ViewController.swift */,
 				11F1D265209A3EBA00A13414 /* Main.storyboard */,
@@ -210,6 +215,7 @@
 			files = (
 				11F1D264209A3EBA00A13414 /* ViewController.swift in Sources */,
 				11F1D262209A3EBA00A13414 /* AppDelegate.swift in Sources */,
+				11F284A5209D0CC000007B89 /* Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
