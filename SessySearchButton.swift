@@ -18,10 +18,10 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
   public let textField = UITextField()
   public var valueUpdated: ((_ value: String) -> Void)?
   
-  @IBOutlet weak var bottomConstraint: NSLayoutConstraint?
-  @IBOutlet weak var leadingConstraint: NSLayoutConstraint?
-  @IBOutlet weak var trailingConstraint: NSLayoutConstraint?
-  @IBOutlet weak var widthConstraint: NSLayoutConstraint?
+  @IBOutlet weak public var bottomConstraint: NSLayoutConstraint?
+  @IBOutlet weak public var leadingConstraint: NSLayoutConstraint?
+  @IBOutlet weak public var trailingConstraint: NSLayoutConstraint?
+  @IBOutlet weak public var widthConstraint: NSLayoutConstraint?
   
   private var keyboardVisibleHeight : CGFloat = 0
   private let overlay = Overlay()
