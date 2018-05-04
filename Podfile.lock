@@ -1,0 +1,23 @@
+PODS:
+  - AwesomeEnum (1.2.0)
+  - SessySearchButton (1.0.0):
+    - AwesomeEnum
+
+DEPENDENCIES:
+  - SessySearchButton (from `.`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AwesomeEnum
+
+EXTERNAL SOURCES:
+  SessySearchButton:
+    :path: "."
+
+SPEC CHECKSUMS:
+  AwesomeEnum: fe633a08020f92ab57277956c1df4d52fbfa27e0
+  SessySearchButton: 690e37f2c88597c3eac118fabe14c715d0027db5
+
+PODFILE CHECKSUM: 7b7a648ef1755fb46614c7f8db32d54377743172
+
+COCOAPODS: 1.5.0
