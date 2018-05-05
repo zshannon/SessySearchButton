@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     self.view.backgroundColor = Asset.dodgerBlue.color
     self.searchButton?.backgroundColor = Asset.darkMalibu.color
     self.searchButton?.tintColor = Asset.kournikova.color
+    self.label?.textColor = Asset.malibu.color
     self.label?.text = ""
     
     self.searchButton?.search = { value in

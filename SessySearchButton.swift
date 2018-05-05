@@ -13,9 +13,16 @@ import UIKit
 public class SessySearchButton: UIButton, UITextFieldDelegate {
   
   public var borderRadius = CGFloat(20.0) // iPhone X Notch Radius
+  public var iconSize = CGFloat(36.0)
   public var placeholderText = "Search"
   public var search: ((_ value: String?) -> Void)?
   public let textField = UITextField()
+  public override var tintColor: UIColor! {
+    didSet {
+      self.textField.textColor = self.tintColor
+      self.setAttributedTitle(Awesome.solid.search.asAttributedText(fontSize: self.iconSize, color: self.tintColor, backgroundColor: .clear), for: .normal)
+    }
+  }
   public var valueUpdated: ((_ value: String) -> Void)?
   
   @IBOutlet weak public var bottomConstraint: NSLayoutConstraint?
@@ -57,11 +64,10 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
           overlay.rightAnchor.constraint(equalTo: keyWindow.rightAnchor),
           overlay.topAnchor.constraint(equalTo: keyWindow.topAnchor),
           overlay.bottomAnchor.constraint(equalTo: keyWindow.bottomAnchor)
-        ])
+          ])
       }
     }
     self.textField.textColor = self.tintColor
-    self.textField.tintColor = self.tintColor
   }
   
   private var isSetup = false
@@ -71,29 +77,27 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
     }
     self.clipsToBounds = true
     self.layer.cornerRadius = self.borderRadius
-    self.setImage(Awesome.solid.search.asImage(size: 40.0), for: .normal)
-    addTarget(self, action: #selector(handleTap(sender:)), for: .touchUpInside)
-    // textField
+    self.setAttributedTitle(Awesome.solid.search.asAttributedText(fontSize: self.iconSize, color: self.tintColor, backgroundColor: .clear), for: .normal)
+    self.addTarget(self, action: #selector(handleTap(sender:)), for: .touchUpInside)
     self.textField.addTarget(self, action: #selector(handleTextFieldDidChange(_:)), for: .editingChanged)
     self.textField.addPadding(.left(20))
     self.textField.adjustsFontSizeToFitWidth = true
     self.textField.alpha = 0.0
     self.textField.clearButtonMode = .whileEditing
     self.textField.delegate = self
-    self.textField.font = UIFont.systemFont(ofSize: 40.0, weight: .medium)
+    self.textField.font = UIFont.systemFont(ofSize: self.iconSize, weight: .medium)
     self.textField.minimumFontSize = 12.0
     self.textField.returnKeyType = .search
     self.textField.textAlignment = .center
     self.textField.textColor = self.tintColor
-    self.textField.tintColor = self.tintColor
     self.textField.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(textField)
+    self.addSubview(self.textField)
     NSLayoutConstraint.activate([
       self.textField.leftAnchor.constraint(equalTo: self.leftAnchor),
       self.textField.rightAnchor.constraint(equalTo: self.rightAnchor),
       self.textField.topAnchor.constraint(equalTo: self.topAnchor),
       self.textField.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-    ])
+      ])
     // Keyboard
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -143,7 +147,7 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
             self.layoutSubviews()
             UIApplication.shared.keyWindow?.layoutIfNeeded()
             return
-          })
+        })
       default:
         break
       }
@@ -165,7 +169,7 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
             self.layoutSubviews()
             UIApplication.shared.keyWindow?.layoutIfNeeded()
             return
-          })
+        })
       default:
         break
       }
@@ -175,16 +179,16 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
   func updateConstants() {
     self.bottomConstraint?.constant = keyboardVisibleHeight - ((UIApplication.shared.keyWindow?.safeAreaInsets.bottom) ?? 0) + (self.trailingConstraint?.constant ?? 0)
     if keyboardVisibleHeight == 0 {
-      self.imageView?.alpha = 1.0
       self.leadingConstraint?.priority = .defaultLow
+      self.setAttributedTitle(Awesome.solid.search.asAttributedText(fontSize: self.iconSize, color: tintColor, backgroundColor: .clear), for: .normal)
       self.textField.alpha = 0.0
       self.textField.placeholder = ""
       self.textField.text = ""
       self.widthConstraint?.priority = .defaultHigh
     }
     else {
-      self.imageView?.alpha = 0.0
       self.leadingConstraint?.priority = .defaultHigh
+      self.setAttributedTitle(nil, for: .normal)
       self.textField.alpha = 1.0
       self.textField.placeholder = self.placeholderText
       self.widthConstraint?.priority = .defaultLow
@@ -192,8 +196,6 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
   }
   
   // MARK: UITextFieldDelegate
-  
-  
   
   public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     let text = self.textField.text
@@ -203,7 +205,7 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
     self.textField.resignFirstResponder()
     return true
   }
-
+  
 }
 
 private class Overlay: UIView {
@@ -226,10 +228,8 @@ private extension UITextField {
   }
   
   func addPadding(_ padding: PaddingSide) {
-    
     self.leftViewMode = .always
     self.layer.masksToBounds = true
-    
     
     switch padding {
       
