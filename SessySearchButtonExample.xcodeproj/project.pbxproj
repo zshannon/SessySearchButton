@@ -19,6 +19,7 @@
 /* Begin PBXFileReference section */
 		060A42FCB39A9591544285D2 /* Pods-SessySearchButtonExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SessySearchButtonExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SessySearchButtonExample/Pods-SessySearchButtonExample.debug.xcconfig"; sourceTree = "<group>"; };
 		09511547B7F6BA5CE3CA988D /* Pods-SearchButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchButton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SearchButton/Pods-SearchButton.debug.xcconfig"; sourceTree = "<group>"; };
+		118ED1AC21126D3100860057 /* SessySearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessySearchButton.swift; sourceTree = "<group>"; };
 		11F1D25E209A3EBA00A13414 /* SessySearchButtonExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SessySearchButtonExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F1D261209A3EBA00A13414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11F1D263209A3EBA00A13414 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		11F1D255209A3EBA00A13414 = {
 			isa = PBXGroup;
 			children = (
+				118ED1AC21126D3100860057 /* SessySearchButton.swift */,
 				11F1D260209A3EBA00A13414 /* SessySearchButtonExample */,
 				11F1D25F209A3EBA00A13414 /* Products */,
 				4B781CF8EEF18DCE71EA4337 /* Pods */,

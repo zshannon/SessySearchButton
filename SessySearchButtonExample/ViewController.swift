@@ -17,13 +17,13 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = Asset.dodgerBlue.color
-    self.searchButton?.backgroundColor = Asset.darkMalibu.color
+    self.searchButton?.backgroundColor = Asset.darkMalibu.color.withAlphaComponent(0.3)
     self.searchButton?.tintColor = Asset.kournikova.color
     self.label?.textColor = Asset.malibu.color
     self.label?.text = ""
     
     self.searchButton?.search = { value in
-      print("Search for: \(value)")
+      print("Search for: \(String(describing: value))")
     }
     self.searchButton?.valueUpdated = { value in
       self.label?.text = value

@@ -75,6 +75,14 @@ public class SessySearchButton: UIButton, UITextFieldDelegate {
     if self.isSetup {
       return
     }
+    if !UIAccessibilityIsReduceTransparencyEnabled() {
+      let blurEffect = UIBlurEffect(style: .light)
+      let blurEffectView = UIVisualEffectView(effect: blurEffect)
+      blurEffectView.frame = bounds
+      blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+      blurEffectView.isUserInteractionEnabled = false
+      self.addSubview(blurEffectView)
+    }
     self.clipsToBounds = true
     self.layer.cornerRadius = self.borderRadius
     self.setAttributedTitle(Awesome.solid.search.asAttributedText(fontSize: self.iconSize, color: self.tintColor, backgroundColor: .clear), for: .normal)
